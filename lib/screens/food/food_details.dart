@@ -22,7 +22,7 @@ class _FoodDetailsState extends State<FoodDetails> {
             onTap: (){
               Get.back();
             },
-            child: Icon (Icons.arrow_back, color: Colors.black)),
+            child: Icon (Icons.arrow_back, color: Colors.black,size: 36,)),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -31,12 +31,13 @@ class _FoodDetailsState extends State<FoodDetails> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 55,),
               Row(
                 children: [
                   Expanded(
                       flex: 3,
                       child: CircleAvatar(
-                        radius: 150,
+                        radius: 100,
                         backgroundColor: Colors.transparent,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
@@ -52,9 +53,7 @@ class _FoodDetailsState extends State<FoodDetails> {
                   Expanded (
                       flex: 2,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 37,
-                        ),
+                        padding: const EdgeInsets.only(left: 10),
                         child: Column (
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -123,15 +122,16 @@ class _FoodDetailsState extends State<FoodDetails> {
                 ],
               ),
               //Description about the food
-              SizedBox(height: 15,),
+              SizedBox(height: 27,),
               Text('Description',style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),),
+              SizedBox(height: 5,),
               Text('This delicious pesto pasta salad is made with fresh basil, '
                   'cherry tomatoes, and premium olive oil. Perfect for a light lunch or a side dish.'),
-              SizedBox(height: 95,),
+              SizedBox(height: 170,),
               Padding(padding: EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
