@@ -38,7 +38,7 @@ class _CloneScreenState extends State<CloneScreen> {
                 Icon(Icons.chat_bubble_outline,color: Colors.grey[600],size: 30,),
                 Icon(Icons.ondemand_video,color: Colors.grey[600],size: 30,),
                 Icon(Icons.notifications_none,
-                 color: Colors.grey[600],
+                  color: Colors.grey[600],
                   size: 30,
                 ),
               ],
@@ -59,10 +59,10 @@ class _CloneScreenState extends State<CloneScreen> {
                       ),
                       SizedBox(width: 10,),
                       Expanded(child: Text("What's on your mind ?",
-                      style: TextStyle(
-                        color: Colors.grey[700],
-                        fontSize: 16,
-                      ),
+                        style: TextStyle(
+                          color: Colors.grey[700],
+                          fontSize: 16,
+                        ),
                       )),
                       Icon(Icons.camera_alt,color: Colors.grey[700],size: 25,),
                     ],
@@ -119,130 +119,130 @@ class _CloneScreenState extends State<CloneScreen> {
 
   makeStory({storyImage,userImage,userName}){
     return AspectRatio(aspectRatio: 1.2/2,
-     child: Container(
-       margin: EdgeInsets.only(right: 10),
-       decoration: BoxDecoration(
-         borderRadius: BorderRadius.circular(15),
-         image: DecorationImage(image: AssetImage(storyImage),
-         fit: BoxFit.cover,
-         ),
-       ),
-       child: Container(
-         padding: EdgeInsets.all(10),
-         decoration: BoxDecoration(
-           borderRadius: BorderRadius.circular(15),
-           gradient: LinearGradient(colors: [
-             Colors.black.withOpacity(0.8),
-             Colors.black.withOpacity(0.1),
-           ]),
-         ),
-         child: Column(
-           crossAxisAlignment: CrossAxisAlignment.start,
-           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           children: [
-            Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.blue,width: 3),
-                image: DecorationImage(image: AssetImage(userImage),
-                fit: BoxFit.cover,
+        child: Container(
+          margin: EdgeInsets.only(right: 10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            image: DecorationImage(image: AssetImage(storyImage),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              gradient: LinearGradient(colors: [
+                Colors.black.withOpacity(0.8),
+                Colors.black.withOpacity(0.1),
+              ]),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.blue,width: 3),
+                    image: DecorationImage(image: AssetImage(userImage),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Text(
+                  userName,style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                ),
+                ),
+              ],
+            ),
+          ),
+        ),
+    );
+  }
+
+
+  makeFeed({userName,userImage,feedTime,feedText,feedImage}){
+    return Padding(padding: EdgeInsets.all(10),
+      child: Container(
+        margin: EdgeInsets.only(bottom: 10),
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(padding: EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage(userImage),
+                    radius: 20,
+                  ),
+                  SizedBox(width: 10,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(userName,style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),),
+                      Text(feedTime,
+                        style: TextStyle(
+                          color: Colors.grey,fontSize: 12,),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  Icon(Icons.more_horiz),
+                ],
+              ),
+            ),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+              child: Text(
+                feedText,
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black87,
                 ),
               ),
             ),
-             Text(
-               userName,style: TextStyle(
-               color: Colors.white,
-               fontWeight: FontWeight.bold,
-               fontSize: 12,
-             ),
-             ),
-           ],
-         ),
-       ),
-     ),
-    );
-}
-
-
-makeFeed({userName,userImage,feedTime,feedText,feedImage}){
-    return Padding(padding: EdgeInsets.all(10),
-    child: Container(
-      margin: EdgeInsets.only(bottom: 10),
-      color: Colors.white,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(padding: EdgeInsets.all(10),
-          child: Row(
-            children: [
-              CircleAvatar(
-                backgroundImage: AssetImage(userImage),
-                radius: 20,
-              ),
-              SizedBox(width: 10,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            Image.asset(feedImage,fit: BoxFit.cover,width: double.infinity,),
+            Padding(padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(userName,style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),),
-                  Text(feedTime,
-                  style: TextStyle(
-                    color: Colors.grey,fontSize: 12,),
+                  Row(
+                    children: [
+                      Icon(Icons.thumb_up_alt_rounded,color: Colors.grey,),
+                      SizedBox(width: 5,),
+                      Text('Like'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.comment,color: Colors.grey,),
+                      SizedBox(width: 5,),
+                      Text('Comment'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.share_outlined,color: Colors.grey,),
+                      SizedBox(width: 5,),
+                      Text('Share'),
+                    ],
                   ),
                 ],
               ),
-              Spacer(),
-              Icon(Icons.more_horiz),
-            ],
-          ),
-          ),
-          Padding(padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-          child: Text(
-            feedText,
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.black87,
             ),
-          ),
-          ),
-          Image.asset(feedImage,fit: BoxFit.cover,width: double.infinity,),
-          Padding(padding: EdgeInsets.all(10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Row(
-                children: [
-                  Icon(Icons.thumb_up_alt_rounded,color: Colors.grey,),
-                  SizedBox(width: 5,),
-                  Text('Like'),
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(Icons.comment,color: Colors.grey,),
-                  SizedBox(width: 5,),
-                  Text('Comment'),
-                ],
-              ),
-              Row(
-                children: [
-                  Icon(Icons.share_outlined,color: Colors.grey,),
-                  SizedBox(width: 5,),
-                  Text('Share'),
-                ],
-              ),
-            ],
-          ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
     );
-}
+  }
 
 
 }
