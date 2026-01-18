@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:testing_app/screens/food_screen.dart';
 
 class CloneScreen extends StatefulWidget {
   const CloneScreen({super.key});
@@ -8,6 +12,15 @@ class CloneScreen extends StatefulWidget {
 }
 
 class _CloneScreenState extends State<CloneScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 7), (){
+      Get.offAll(()=>FoodScreen());
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

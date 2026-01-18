@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
      debugShowCheckedModeBanner: false,
-      //home: CloneScreen(),
-     // home: ViewScreen(),
-      home: FoodScreen(),
+     home: ViewScreen(),
     );
   }
 }
