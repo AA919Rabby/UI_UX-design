@@ -13,7 +13,21 @@ This is frontend design of dribble and facebook lite clone
 2.Schreenshots
 
 
-[Food app design](Screenshot_20260118_103129.jpg)
+[Food app home screen](Screenshot_20260118_103129.jpg)
+
+
+
+[Cart screen](Screenshot_20260118_153415.jpg)
+
+
+
+
+[Favourite screen](Screenshot_20260118_153418.jpg)
+
+
+
+
+[Profile screen](Screenshot_20260118_153422.jpg)
 
 
 
