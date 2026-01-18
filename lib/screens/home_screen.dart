@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'food/food_details.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -172,39 +176,44 @@ class _HomeScreenState extends State<HomeScreen> {
                       'https://images.unsplash.com/photo-1473093226795-af9932fe5856?w=400',
                       'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400',
                     ];
-                    return Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(25),
-                        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)],
-                      ),
-                      child: Column(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              margin: const EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(image: NetworkImage(foodPics[index]), fit: BoxFit.cover),
+                    return  InkWell(
+                      onTap: (){
+                        Get.to(()=>FoodDetails());
+                      },
+                      child: Container (
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10)],
+                        ),
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                margin: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(image: NetworkImage(foodPics[index]), fit: BoxFit.cover),
+                                ),
                               ),
                             ),
-                          ),
-                          const Text("Special Item", style: TextStyle(fontWeight: FontWeight.bold)),
-                          Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Text("\$12.50", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),
-                                Container(
-                                  padding: const EdgeInsets.all(4),
-                                  decoration: BoxDecoration(gradient: primaryGradient, shape: BoxShape.circle),
-                                  child: const Icon(Icons.add, color: Colors.white, size: 20),
-                                ),
-                              ],
-                            ),
-                          )
-                        ],
+                            const Text("Special Item", style: TextStyle(fontWeight: FontWeight.bold)),
+                            Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Text("\$12.50", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),
+                                  Container(
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(gradient: primaryGradient, shape: BoxShape.circle),
+                                    child: const Icon(Icons.add, color: Colors.white, size: 20),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     );
                   },
