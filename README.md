@@ -17,6 +17,11 @@ This is frontend design of dribble and facebook lite clone
 
 
 
+[Food details](Screenshot_20260118_212545.jpg)
+
+
+
+
 [Cart screen](Screenshot_20260118_153415.jpg)
 
 
